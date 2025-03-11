@@ -1,66 +1,22 @@
-## Foundry
+## 项目内容
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+### 功能说明
 
-Foundry consists of:
+#### - 一个质押挖矿合约，质押RNT，挖矿esRNT，esRNT可以兑换为RNT，也可以赎回。挖矿期一个月,到期可以自动重新开始质押。
+#### - 挖矿期间，用户可以随时赎回，赎回时，按照时间比例赎回，未赎回的esRNT，将被销毁。
+#### - 挖矿期满，用户可自行兑换奖励。
+#### - 挖矿期间，用户可以随时查看挖矿信息，包括质押信息，挖矿信息，赎回信息，奖励信息。
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### 主要函数
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+#### - testClaimReward() (gas: 237703)
+#### - testEmergencyWithdraw() (gas: 36673)
+#### - testEmergencyWithdrawNonOwner() (gas: 13900)
+#### - testGetLockCount() (gas: 232168)
+#### - testPendingRewards() (gas: 94366)
+#### - testRedeemFull() (gas: 253169)
+#### - testRedeemPartial() (gas: 253521)
+#### - testStake() (gas: 92790)
+#### - testStakeAdditional() (gas: 238756)
+#### - testUnstake() (gas: 100331)
+#### - testUnstakeAll() (gas: 88043)
